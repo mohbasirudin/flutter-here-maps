@@ -1,3 +1,4 @@
+import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_here_maps/service_location.dart';
 import 'package:get/get.dart';
@@ -11,8 +12,15 @@ class BindingMain extends Bindings {
 }
 
 class ControllerMain extends GetxController {
-  HereMapController? mapController;
+  CustomPopupMenuController popupMenuController = CustomPopupMenuController();
+  HereMapController? hereMapController;
+
+  RxInt indexMapScheme = 0.obs;
+  RxString routeDistance = "".obs;
+  RxString routeTime = "".obs;
   MapPolyline? mapPolyline;
+  MapMarker? mapMarker;
+
   ServiceLocation _serviceLocation = ServiceLocation();
   RxDouble userLongitude = 0.0.obs;
   RxDouble userLatitude = 0.0.obs;
@@ -25,8 +33,32 @@ class ControllerMain extends GetxController {
   RxDouble placeLatitude = 0.0.obs;
   RxBool loading = false.obs;
 
+  List<MapScheme> mapSchemes = [
+    MapScheme.normalDay,
+    MapScheme.normalNight,
+    MapScheme.hybridDay,
+    MapScheme.hybridNight,
+    MapScheme.satellite,
+  ];
+  List<String> typeScheme = [
+    "Normal Day",
+    "Normal Night",
+    "Hybrid Day",
+    "Hybrid Night",
+    "Satelite",
+  ];
+  List<String> imageScheme = [
+    "assets/normal_day.png",
+    "assets/normal_night.png",
+    "assets/hybrid_day.png",
+    "assets/hybrid_night.png",
+    "assets/satelite.png",
+  ];
+
   @override
   void onInit() {
+    popupMenuController.showMenu();
+
     //untuk akses lokasimu saat ini,
     // uncomment code nomor 1 & comment code nomor 2
 
@@ -86,7 +118,7 @@ class ControllerMain extends GetxController {
 
   @override
   void onClose() {
-    mapController?.finalize();
+    hereMapController?.finalize();
     _serviceLocation.close();
     close();
     super.onClose();

@@ -8,12 +8,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="flutter_here_maps">
 
-                <meta-data
-                    android:name="com.here.sdk.access_key_id"
-                    android:value="YOUR_ACCESS_KEY_ID" />
-                <meta-data
-                    android:name="com.here.sdk.access_key_secret"
-                    android:value="YOUR_ACCESS_KEY_SECRET" />
+        <meta-data
+            android:name="com.here.sdk.access_key_id"
+            android:value="@string/access_key_id" />
+        <meta-data
+            android:name="com.here.sdk.access_key_secret"
+            android:value="@string/access_key_secret" />
 
 
         <activity

@@ -32,6 +32,7 @@ dependencies:
   http:
   location:
   timeline_tile: ^2.0.0
+  custom_pop_up_menu: ^1.2.0
 
   here_sdk:
     path: plugins/here_sdk
