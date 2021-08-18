@@ -35,7 +35,7 @@
 plugins/here_sdk
 
 # here key
-android/app/src/main/res/values/string.xml
+/android/app/src/main/res/values/string.xml
 
 # Web related
 lib/generated_plugin_registrant.dart
