@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="access_key_id">MvRf1qq8G5Bt2Izi7Q9VNg</string>
-    <string name="access_key_secret">XQ_fPb6NTzieGvEGGysQcuD19tj1gLB9y9IJS2xEegYAc6TS6GzOMzH2YPX3ZuRBKJuoJ2VLJKdz_jU1I1nwWQ</string>
+    <string name="access_key_id">your_access_key_id</string>
+    <string name="access_key_secret">your_access_key_secret</string>
 </resources>
